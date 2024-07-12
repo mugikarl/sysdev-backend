@@ -1,9 +1,10 @@
-const http = require('http');
+const exp = require('express');
 
-var web = http.createServer(function(req,res){
-    res.end('Javascript')
+const web = exp();
+web.get('/',(req,res) =>{
+    res.send('Javascript')
 });
 
-const port = 3000;
 web.listen(3000);
 
+//Used node index.js to run the application

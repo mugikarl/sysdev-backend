@@ -18,6 +18,14 @@ web.get('/',(req,res) =>{
     res.send('Javascript')
 });
 
+web.get('/programming_languages',(req,res) =>{
+    connectdb.query('select * from programming_languages;',(error,results) =>{
+    if (error) throw err
+    res.json(results);
+    });
+});
+
+
 web.listen(3000);
 
 //Stage 1
